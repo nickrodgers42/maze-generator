@@ -1,0 +1,20 @@
+{
+  "name": "maze-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
+    "start": "browser-sync start --server -f -w"
+  },
+  "author": "Nick Rodgers",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^27.5.1"
+  },
+  "jest": {
+    "transform": {},
+    "testEnvironment": "jest-environment-node"
+  },
+  "type": "module"
+}
