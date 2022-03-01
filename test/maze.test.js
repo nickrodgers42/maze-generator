@@ -1,7 +1,7 @@
 'use strict';
 
-import Maze from "../src/maze"
-import Cell from "../src/cell"
+import Maze from "../src/maze.js"
+import Cell from "../src/cell.js"
 import { jest } from '@jest/globals'
 
 
@@ -16,7 +16,7 @@ test("Able to intitialize a 10 x 10 maze", () => {
     for (let i = 0; i < 10; ++i) {
         mazeGrid.push([]);
         for (let j = 0; j < 10; ++j) {
-            mazeGrid[i].push(new Cell());
+            mazeGrid[i].push(new Cell(i, j));
         }
     }
     let maze = new Maze(mazeGrid);
@@ -25,8 +25,9 @@ test("Able to intitialize a 10 x 10 maze", () => {
 })
 
 test("Able to access an individual cell", () => {
-    let maze = new Maze([[new Cell]]);
+    let maze = new Maze([[new Cell(0, 0)]]);
     expect(maze.getCell(0, 0)).toBeDefined();
+    expect(maze.getCell(0, 0).x).toBe(0);
 })
 
 
